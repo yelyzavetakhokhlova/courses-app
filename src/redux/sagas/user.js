@@ -1,15 +1,15 @@
-import axios from 'axios';
 import {
   call,
   put,
 } from 'redux-saga/effects';
 
+import { axios } from './axios';
 import { isResponseOk } from '../../helpers/isResponseOk';
 import { CONSTANTS } from '../../constants';
 
 export const loginRequest = ({ login, password }) => {
   return axios
-    .post(`${CONSTANTS.BASE_URL}/api/login`, {
+    .post('/login', {
       login,
       password,
     })
